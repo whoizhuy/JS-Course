@@ -1,0 +1,96 @@
+<!-- 
+    Kiểu dữ liệu trong Javascript
+
+    1. Dữ liệu nguyên thuỷ - Primitive Data
+        - Number
+        - String
+        - Boolean
+        - Undefined
+        - Null
+        - Symbol
+
+    2. Dữ liệu phức tạp - Complex Data
+        - Function
+        - Object
+-->
+
+<script>
+    // Number type
+    var a = 11
+    var b = 22
+    var c = 33
+    console.log(typeof a, b, c)
+
+    // String type
+    var fullName = 'Huy Gia'
+    var lastName = 'Huynh'
+    console.log(typeof fullName)
+    console.log(fullName + ' ' + lastName)
+
+    // Boolean type
+    var isSuccess = true
+    var isUnsuccess = false
+    console.log(typeof isSuccess)
+
+    // Undefined type
+    var age
+    var name
+    var year
+    console.log(typeof age, name, year)
+    console.log(age)
+
+    // Null type
+    var isNull = null
+    console.log(typeof isNull)
+    console.log(isNull)
+
+    // Symbol type
+    var id = Symbol('id') // unique
+    var id2 = Symbol('id') // unique
+    console.log(typeof id)
+    console.log(id)
+
+    // Function type
+    var myFunction = function () {
+        alert('Xin chào các bạn')
+    }
+    console.log(typeof myFunction)
+    
+    // Object type 
+    var myObject = {
+        name: 'Huy Gia',
+        age: 22,
+        address: 'Quảng Ngãi',
+        myFunction: function() {
+
+        }
+    }
+    console.log(typeof myObject)
+    console.log('myObject: ', myObject)
+
+    var myArray = ['Javascript', 'HTML', 'CSS']
+    console.log(typeof myArray)
+    console.log('myArray: ', myArray)
+
+
+    // câu 1
+    var age = 22
+    var pi = 3.14
+    var bonusPoint = 69
+
+    // câu 2
+    var fullName = 'hgnak'
+    var myGirlFriendName = 'aknhg'
+    var currentLanguage = 'Javascript'
+
+    // câu 3
+    function run(input) {
+        var output;
+        if (typeof input == 'string') {
+            output = true
+        } else {
+            output = false
+        }
+        return output;
+    }
+</script>

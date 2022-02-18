@@ -1,0 +1,65 @@
+<!--  
+Kiểu số - Number
+
+Trong Javascript có 2 loại số:
+
+        1. Các số thông thường trong Javascript được lưu trữ dưới dạng 64 bit IEEE-754 (còn được gọi là các số phẩy động). Trong hầu hết các trường hợp khi làm việc với Javascript là chúng ta sử dụng loại số này.
+        2. Số BigInt là loại số sử dụng để biểu thị số nguyên có độ dài tùy ý.
+
+-->
+<script>
+    var a = 1000000;
+    var b = 1e6;
+    var c = 2e9;
+    console.log('b =', b, 'và c =', c);
+
+/* 
+    ĐỐI TƯợNG NUMBER
+
+    Đối tượng Number trong Javascript là đối tượng giúp chúng ta định nghĩa số và làm việc với số. Chúng ta thường sử dụng các phương thức sau của đối tượng Number khi làm việc với số trong Javascript:
+
+    Phương thức                     Vai trò
+    Number.isFinite()               Xác định xem giá trị đã cho có phải là số hữu hạn hay ko. Trả về Boolean
+    Number.isInteger()              Xác định xem giá trị đã cho có phải là số nguyên hay không. Trả về Boolean
+    Number.parseFloat()             Chuyển đổi chuỗi đã cho thành một số dấu phẩy động
+    Number.parseInt()               Chuyển đỗi chuỗi đã cho thành một số nguyên
+    Number.prototype.toFixed()      Chuyển đỗi và trả về chuỗi đại diện cho số đã cho, lấy chữ số chính xác sau dấu thập phân
+    Number.prototype.toString()     Chuyển đỗi và trả về số đã cho dưới dạng chuỗi
+*/
+    console.log('2 / 0', Number.isFinite(2 / 0));
+    console.log('20 / 5', Number.isFinite(20 / 5));
+    console.log('0 / 0', Number.isFinite(0 / 0));
+
+    console.log('99999999: là số nguyên', Number.isInteger(99999999));
+    console.log('0.2', Number.isInteger(0.2));
+    console.log('Pi', Number.isInteger(Math.PI));
+
+    console.log('parseFloat')
+    console.log(Number.parseFloat('10'))
+    console.log(Number.parseFloat('10.000'))
+    console.log(Number.parseFloat('22,11'))
+    console.log(Number.parseFloat('22.2211'))
+    console.log(Number.parseFloat('22 11 33'))
+    console.log(Number.parseFloat('22'))
+    console.log(Number.parseFloat('22 is my age'))
+
+    console.log('parseInt')
+    console.log(Number.parseInt('10'))
+    console.log(Number.parseInt('10.000'))
+    console.log(Number.parseInt('22,11'))
+    console.log(Number.parseInt('22.2211'))
+    console.log(Number.parseInt('22 11 33'))
+    console.log(Number.parseInt('22'))
+    console.log(Number.parseInt('22 is my age'))
+
+    console.log('toFixed')
+    let numberObject = 2211.123456;
+    console.log(numberObject.toFixed());
+    console.log(numberObject.toFixed(1));
+    console.log(numberObject.toFixed(6));
+
+    console.log('toString')
+    console.log((2).toString());
+    console.log((11).toString());
+    console.log((22).toString());
+</script>

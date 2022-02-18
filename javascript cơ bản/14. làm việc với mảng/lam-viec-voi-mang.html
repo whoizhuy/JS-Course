@@ -1,0 +1,56 @@
+<!--
+    LÀM VIỆC VỚI ARRAY
+
+    Keyword: Javascript array method
+
+    1. To String
+    2. Join
+    3. Pop
+    4. Push
+    5. Shift
+    6. Unshift
+    7. Splicing
+    8. Concat
+    9. Slicing
+-->
+<script>
+    var languages = ['HTML', 'CSS', 'JS'];
+
+    // 1. toString
+    console.log(languages.toString());
+
+    // 2. Join - biến một mảng thành String
+    console.log(languages.join());
+    console.log(languages.join(' - '));
+    console.log(typeof languages.join(' - '));
+
+    // 3. Pop - xoá element cuối và trả về element đó
+    console.log('Xoá element cuối là:', languages.pop());
+    console.log(languages);
+
+    // 4. Push - thêm một element ở cuối mảng
+    languages.push('JS');
+    console.log(languages);
+
+    // 5. Shift - xoá element đầu và trả về element đó
+    console.log('Xoá element đầu là:', languages.shift());
+    console.log(languages);
+
+    // 6. Unshift - thêm element vào đầu mảng
+    console.log(languages.unshift('Golang'));
+    console.log(languages);
+
+    // 7. Splice - Xoá từ vị trí nào & xoá mấy element & chèn từ vị trí đó
+    languages.splice(0, 1, 'HTML');
+    console.log(languages);
+    
+    // 8. Concat - hợp nhất 2 mảng
+    var concat = ['Bootstrap', 'Tailwind'];
+    console.log(languages.concat(concat));
+
+    // 9. Slice - cắt phần tử mảng từ vị trí... đến vị trí...
+    var slice = ['HTML', 'CSS', 'JS', 'BS4'];
+    console.log(slice.slice(1, 2));
+    console.log(slice.slice(1));
+
+</script>

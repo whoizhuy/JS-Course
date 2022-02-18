@@ -1,0 +1,64 @@
+<!--  
+    LÀM VIỆC VỚI CHUỖI
+
+    1. Length
+    2. Find index
+    3. Cut string
+    4. Replace
+    5. Convert to upper case
+    6. Convert to lower case
+    7. Trim
+    8. Split
+    9. Get a character by index
+-->
+<script>
+    // 1. Length
+    var string1 = 'Tôi đang học Javascript';
+    console.log(string1.length);
+
+    // 2. Find index - trả về vị trí chuỗi đầu tiên
+    var string2 = 'Tôi đang học JS tại JS ở JS';
+    console.log(string2.indexOf('JS'));
+    console.log(string2.indexOf('JS', 15)); // tìm theo thứ tự
+    console.log(string2.lastIndexOf('JS')); // tìm vị trí cuối
+    console.log(string2.indexOf('ABC')); // không tìm thấy trả về -1
+    console.log(string2.search('JS')); // search ko tìm theo vị trí đc như indexOf, và tìm theo biểu thức chính quy
+
+    // 3. Cut string - cắt chuỗi
+    var string3 = 'Tôi đang học JS tại nhà';
+    console.log(string3.slice(4, 12)); // cắt từ trái qua phải
+    console.log(string3.slice(-9, -1)); // cắt từ phải qua trái
+
+    // 4. Replace - thay thế
+    var string4 = 'Thay thế JS tại nhà';
+    console.log(string4.replace('JS', 'Javascript'))
+    var string41 = 'Thay thế JS tại JS nhà JS';
+    console.log(string41.replace('JS', 'Javascript'));
+    console.log(string41.replace(/JS/g, 'Javascript')); // biểu thức chính quy
+
+    // 5. Convert to upper case
+    // 6. Convert to lower case
+    var string5 = 'in hoa dòng chữ này';
+    var string6 = 'IN THƯỜNG DÒNG CHỮ NÀY';
+    console.log(string5.toUpperCase());
+    console.log(string6.toLowerCase());
+
+    // 7. Trim - loại bỏ khoảng trắng
+    var string7 = '     loại bỏ khoảng trắng        ';
+    console.log(string7.length)
+    console.log(string7.trim().length);
+
+    // 8. Split
+    var string8 = 'HTML, CSS, JS';
+    console.log(string8.split(', '));
+    console.log(string8.split(','));
+    var string81 = 'HTML';
+    console.log(string81.split(''));
+
+    // 9. Get a character by index
+    var string9 = 'aknhg';
+    console.log(string9.charAt(4));
+    console.log(string9[2]);
+    console.log(string9['']);
+
+</script>

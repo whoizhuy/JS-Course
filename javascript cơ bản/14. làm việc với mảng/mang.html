@@ -1,0 +1,56 @@
+<!--  
+    Mảng trong Javascript - Array
+
+    1. Tạo mảng
+        - Cách tạo
+        - Sử dụng cách nào - Tại sao ?
+        - Kiểm tra data type
+    2. Truy xuất mảng
+        - Độ dài mảng
+        - Lấy phần tử theo index
+-->
+<script>
+    // Cách 1
+    var languages = [
+        'Javascript',
+        'HTML',
+        'CSS',
+        'SQL',
+        null,
+        undefined,
+        function() {
+        },
+        {}
+    ]
+    console.log(languages);
+    console.log(Array.isArray(languages));
+
+    // Cách 2
+    var NgonNgu = new Array(
+        'Javascript',
+        'HTML',
+        'CSS',
+        'SQL',
+        null,
+        undefined,
+        function() {
+        },
+        {}
+    );
+    console.log(NgonNgu);
+    console.log(typeof NgonNgu);
+    console.log(Array.isArray(NgonNgu));
+    console.log(Array.isArray({}))
+    console.log(Array.isArray(new Array(1, 2, 3, 4)));
+
+
+
+    var array = [
+        'Javascript', // index hoặc key
+        'HTML',
+        'CSS',
+        'SQL'
+    ];
+    console.log(array.length);
+    console.log(array[0]);
+</script>

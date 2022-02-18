@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Course</title>
+
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+    <link rel="stylesheet" href="">
+</head>
+<body>
+
+
+<!-- style here -->
+<style>
+    html {scroll-behavior: smooth;}
+    ::-webkit-scrollbar {width: 12px}
+    ::-webkit-scrollbar-track {background: #BEDAFF;}
+    ::-webkit-scrollbar-thumb {background: #444;}
+    ::-webkit-scrollbar-thumb:hover {background: #333;}
+
+    body {padding: 0; box-sizing: border-box; margin: 0; font-family: monospace; text-align: center; color: white; background: grey;}
+
+    button {padding: .5rem 1.1rem; background: #BEDAFF; color: black; font-family: monospace;cursor: pointer;}
+    button:hover {background: #ACD0FF;}
+
+    h1 {margin-top: 7rem; color: #FF7F7F ;}
+    h2 {color: #F3FF92;}
+
+    table, th, td {border:1px solid lightgreen; border-collapse: collapse}
+    td {padding: .5rem 1rem;}
+
+    span {color: lightgreen}
+
+    .container {
+        margin-left: 15%;
+    }
+    .navbar  {
+        display: block;
+        width: auto;
+        height: 100%;
+        background: lightblue;
+        text-align: left;
+        position: fixed;
+        overflow: auto;
+    }
+    .navbar a {
+        display: block;
+        text-decoration: none;
+        padding: .4rem 1.2rem;
+        background: lightblue;
+        color: black;
+    }
+    .navbar a:hover {
+        background-color: #666;
+        color: white;
+    }
+</style>
+    
+
+    <div id="top" class="navbar">
+        <a href="javascript.html">Reset Page</a>
+        <a href="#intro">JavaScript Intro</a>
+        <a href="#output">JavaScript Output</a>
+        <a href="#js-statement">JavaScript Statement</a>
+        <a href="#js-syntax">JavaScript Syntax</a>
+        <a href="#js-variables">JavaScript Variables</a>
+        <a href="#js-let">JavaScript Let</a>
+        <a href="#js-const">JavaScript Const</a>
+    </div>
+
+    <!-- <script>
+        window.onscroll = () => {
+            if (window.scrollY > 10) {
+                document.querySelector('.nav-list').classList.add('active');
+            } else {
+                document.querySelector('.nav-list').classList.remove('active');
+            }
+        }
+    </script> -->
+    
+
+
+<div class="container">
+    <!-- Example 1: change text -->
+	<h1 id="intro" style="margin-top: 0">What Can JavaScript Do?</h1>
+    
+    <h2 id="text">Hello World!!!</h2>
+    
+    <button type="button" onclick='document.getElementById("text").innerHTML = "it works" '>Click me </button>
+
+
+    <!-- Example 2: show date -->
+	<button type="button" onclick="document.getElementById('date').innerHTML = Date()">Click me to display Date and Time.</button>	
+    
+    <h2 id="date"></h2>
+
+    <!-- Example 3: change HTML -->
+    <h2>Javascript can change HTML attribute values</h2>
+    <p>In this case, Javascript changes the value of the src (source) attribute of an image.</p>
+    <button onclick="document.getElementById('myImage').src='asset/pic_bulboff.gif'">Turn it off</button>
+    
+    <img src="asset/pic_bulboff.gif" id="myImage" alt="this is a bulb">
+    
+    <button onclick="document.getElementById('myImage').src='asset/pic_bulbon.gif'">Turn it on</button>
+    
+
+
+    <!-- Example 4: change style -->
+    <h1>Now let's try another JavaScript examples</h1>
+
+    <p id="change-font">JavaScript can change the style of an HTML element (change font-size)</p>
+
+    <button type="button" onclick="document.getElementById('change-font').style.fontSize='1.5rem'">Click me to increase font size</button> <!-- increase font size -->
+
+    <button type="button" onclick="document.getElementById('change-font').style.fontSize='1rem'">Click me to decrease font size</button> <!-- decrease font size -->
+
+    <h2 id="hide">it can hide HTML Elements.</h2>
+
+    <!-- <button type="button" onclick="document.getElementById('hide').style.display='none'">Click me to hide</button> -->
+
+    <h2>or it can show hidden HTML Elements</h2>
+
+    <button type="button" onclick="document.getElementById('show-hidden').style.display='block'">Click me to show</button> <!-- show element -->
+
+    <button type="button" onclick="document.getElementById('show-hidden').style.display='none'">Click me to hide</button> <!-- hide element -->
+
+    <p id="show-hidden" style="display:none">I'am Giant H - A Bass Music DJ/Producer.</p>
+
+    <h1>JavaScript Functions and Events</h1>
+    <p>A JavaScript function is a block of JavaScript code, that can be executed when "called" for.</p>
+    <p>For example, a function can be called when an event occurs, like when the user clicks a button.</p>
+    <p>You can place any number of scripts in an HTML document.</p>
+    <p>Scripts can be placed in the <body>, or in the <head> section of an HTML page, or in both.</head>
+    <script>
+        function myFunction () {
+            document.getElementById("js-head").innerHTML = "Paragraph changed";
+        }
+    </script>
+    <h2>Demo JavaScript in head</h2>
+    <p id="js-head">Paragraph</p>
+    <button type="button" onclick="myFunction()">Click here</button>
+
+
+
+
+
+
+
+    <!-- ***********************************
+    ********** JavaScript Output ***********
+    **************************************** -->
+    
+    <h1 id="output">JavaScript Output</h1>
+
+    <h2>JavaScript Display Possibilities</h2>
+
+    <h2>JavaScript can "display" data in different ways:</h2>
+    <p>1. Writing into an HTML element, using innerHTML.</p>
+    <p>2. Writing into the HTML output using document.write().</p>
+    <p>3. Writing into an alert box, using window.alert().</p>
+    <p>4. Writing into the browser console, using console.log().</p>
+
+    <h2>Using innerHTML</h2>
+    <p>To access an HTML element, JavaScript can use the <span>document.getElementById(id)</span> method.</p>
+    <p>The id attribute defines the HTML element.</p>
+    <p>The innerHTML property defines the HTML content</p>
+
+    <h2>This is output demo</h2>
+    
+    <h2>1. Using innerHTML</h2>
+
+    <p id="output-demo"></p>
+    <script>
+        document.getElementById("output-demo").innerHTML = 22 + 11;
+    </script>
+
+    <!-- 1.2 Using document.Write() -->
+    <h2>2. Using ducument.Write()</h2>
+    <script>document.write(11 + 22);</script>
+
+    <p style="color:cyan">Note: Using document.write() after an HTML document is loaded, will delete all existing HTML</p>
+    <button type="button" onclick="document.write(11 + 22)">Try it</button>
+
+    <h2>Using window.alert()</h2>
+    <p> window.alert(11 + 22) </p>
+    <!-- alert(11+22) -->
+
+    <h2>Using console.log()</h2>
+    <p>Activate Debugging</p>
+    <p>F12 on your keyboard will activate debugging.</p>
+    <p>Then select "Console" in the debugger menu to see console.log(22 + 11) result.</p>
+    <script>console.log(22 + 11)</script>
+
+    <h2>JavaScript Print</h2>
+    <button onclick="window.print()">Print this page</button>
+
+
+
+
+
+
+    <!-- **************************************
+    ********** JavaScript Statement ***********
+    ******************************************* -->
+
+    <h1 id="js-statement">JavaScript Statement</h1>
+
+    <p>A JavaScript program is a list of statements to be excecuted by a computer.</p>
+
+    <h2>Example:</h2>
+    <p>x = 11; y = 22; z = x + y</p>
+    <p id="demo"></p>
+    <script>
+        let x, y, z;
+        x = 11;
+        y = 22;
+        z = x + y;
+
+        document.getElementById("demo").innerHTML = "The value of z is " + z + ".";
+    </script>
+
+    <h2>JavaScript Programs</h2>
+    <p>A computer program is a list of "instructions" to be "executed" by a computer.</p>
+    <p>In a programming language, these programming instructions are called statements.</p>
+    <p>A JavaScript program is a list of programming statements. </p>
+    <p>In HTML, JavaScript programs are executed by the web browser.</p>
+
+    <h2>2.1 JavaScript Statements</h2>
+    <p>JavaScript statements are composed of: Values, Operators, Expressions, Keywords, and Comments.</p>
+    <p>This statement tells the browser to write "Hello Dolly." inside an HTML element with id="demo"</p>
+
+    <h2>In HTML, JavaScript statements are executed by the browser.</h2>
+    <p id="state-demo"></p>
+    <script>
+        document.getElementById("state-demo").innerHTML = "Hello Huy Gia";
+    </script>
+
+    <!-- 2.2 Semicolons
+    Semicolons separate JavaScript statements. -->
+
+    <h2>JavaScript statements are seperated by semicolons.</h2>
+    <p id="semicolons-demo"></p>
+    <script>
+        let a, b, c;
+        a = 11;
+        b = 22;
+        c = a + b;
+        document.getElementById("semicolons-demo").innerHTML = "a + b = " + c;
+    </script>
+
+    <!-- 2.3 JavaScript Code Block -->
+    <script>
+        function blockFunction () {
+            document.getElementById("block-demo1").innerHTML = "Hello Huy";
+            document.getElementById("block-demo2").innerHTML = "How are you doing? Are you learning JavaScript?";
+        }
+    </script>
+    <button type="button" onclick="blockFunction()">Click here to display blockFunction</button>
+    <p id="block-demo1"></p>
+    <p id="block-demo2"></p>
+
+    <h2>JavaScript Keywords</h2>
+    <p>JavaScript statements often start with a keyword to identify the JavaScript action to be performed.</p>
+    <p>Our Reserved Words Reference lists all JavaScript keywords.</p>
+    <p>Here is a list of some of the keywords you will learn about in this tutorial</p>
+
+    <table style="width: 50%; margin: 0 auto;">
+        <tr>
+            <th><h2>Keyword</h2></th>
+            <th><h2>Description</h2></th>
+        </tr>
+
+        <tr>
+            <td>Var</td>
+            <td>Declare a variable</td>
+        </tr>
+
+        <tr>
+            <td>Let</td>
+            <td>Declare a block variable</td>
+        </tr>
+
+        <tr>
+            <td>Const</td>
+            <td>Declare a block constant</td>
+        </tr>
+
+        <tr>
+            <td>If</td>
+            <td>Marks a block of statements to be executed on a condition</td>
+        </tr>
+
+        <tr>
+            <td>Switch</td>
+            <td>Mark a block of statements to be executed in different cases</td>
+        </tr>
+
+        <tr>
+            <td>For</td>
+            <td>Marks a block of statements to be executed in a loop</td>
+        </tr>
+
+        <tr>
+            <td>Function</td>
+            <td>Declares a function</td>
+        </tr>
+
+        <tr>
+            <td>Return</td>
+            <td>Exits a function</td>
+        </tr>
+
+        <tr>
+            <td>Try</td>
+            <td>Implements error handling to a block of statements</td>
+        </tr>
+    </table>
+
+    <!-- -----------------------------------------------------------------------------
+    |<Keyword>|      |<Description>                                                  |
+    |var      |      |Declare a variable                                             |
+    |let      |      |Declare a block variable                                       |
+    |const    |      |Declares a block constant                                      |
+    |if       |      |Marks a block of statements to be executed on a condition      |
+    |switch   |      |Marks a block of statements to be executed in different cases  |
+    |for      |      |Marks a block of statements to be executed in a loop           |
+    |function |      |Declares a function                                            |
+    |return   |      |Exits a function                                               |
+    |try      |      |Implements error handling to a block of statements             |
+    ------------------------------------------------------------------------------ -->
+   
+
+
+    <!-- ***********************************
+    ********** JavaScript Syntax ***********
+    **************************************** -->
+
+    <h1 id="js-syntax">JavaScript Syntax</h1>
+
+    <h2>JavaScript Values</h2>
+    <p>The JavaScript syntax defines two types of values:</p>
+    <p>+ Fixed values: Fixed values are called Literals.</p>
+    <p>+ Variable values: Variable values are called Variables.</p>
+   
+    <h2>JavaScript Literals</h2>
+    <p>The two most important syntax rules for fixed values are:</p>
+    <p>1. Numbers are written with or without decimals: 10.50; 1001</p>
+    <p>2. Strings are text, written within double or single quotes: <span style="color: lightgreen">"Huy Gia"; 'Huy Gia'</span></p>
+
+
+
+    <h2>JavaScript Variables</h2>
+    <p>In a programming language, variables are used to store data values.</p>
+    <p>JavaScript uses the keywords var, let and const to declare variables.</p>
+    <p>An equal sign is used to assign values to variables.</p>
+
+    <p>In this example, x is defined as a variable. Then, x is assigned (given) the value 6: <span style="color: lightgreen">let x; x = 6</span></p>
+   
+
+    <h2>JavaScript Operators</h2>
+    <p>1. JavaScript uses arithmetic operators ( + - * / ) to compute values: (11 + 22) * 33</p>
+    <span style="color: lightgreen">document.getElementById("Id-tag").innerHTML = (11 + 22) * 33;</span>
+
+    <p>2. JavaScript uses an assignment operator ( = ) to assign values to variables:</p>
+    <span style="color: lightgreen">let x, y; x = 11; y = 22;</span>
+   
+
+    <h2>JavaScript Expressions</h2>
+    <p>An expression is a combination of values, variables, and operators, which computes to a value.
+    The computation is called an evaluation.</p>
+
+    <p>For example, 5 * 10 evaluates to 50: <span style="color: lightgreen">document.getElementById("demo").innerHTML = 5 * 10;</span></p>
+
+    <p>Expressions can also contain variable values:</p>
+    <span style="color: lightgreen">var x; x = 5; document.getElementById("demo").innerHTML = x * 10;</span>
+
+    <p>The values can be of various types, such as numbers and strings.</p>
+    <p>For example, "John" + " " + "Doe", evaluates to "John Doe":</p>
+    <span>ducument.getElementById("demo").innerHTML = "Huy" + " " + "Gia";</span>
+   
+
+    <h2>JavaScript Keywords</h2>
+    <p>JavaScript keywords are used to identify actions to be performed.</p>
+    
+    <p>1. The let keyword tells the browser to create variables:</p>
+    <span>let x, y;</span> <br>
+    <span>x = 11 + 22;</span> <br>
+    <span>y = x * 33;</span> <br>
+    <span>document.getElementById("demo").innerHTML = y;</span>
+
+    <p>2. The var keyword also tells the browser to create variables:</p>
+    <span>var x, y; <br>
+    x = 11 + 22; <br>
+    y = x * 33; <br>
+    document.getElementById("demo").innerHTMl = y;</span>
+
+
+    <h2>JavaScript Identifiers</h2>
+    <p>Identifiers are names.</p>
+    <p>In JavaScript, identifiers are used to name variables (and keywords, and functions, and labels).</p>
+    <p>The rules for legal names are much the same in most programming languages.</p>
+    <p>In JavaScript, the first character must be a letter, or an underscore (_), or a dollar sign ($).</p>
+    <p>Subsequent characters may be letters, digits, underscores, or dollar signs.</p>
+   
+
+    <h2>JavaScript Case Sensitive</h2>
+    <p>All JavaScript identifiers are case sensitive</p>
+    <p>The variables Lastname and LastName are two diffrent variables</p>
+    <span>
+        let Lastname, LastName; <br>
+        Lastname = "Huy"; <br>
+        LastName = "Gia";
+    </span>
+
+    <h2>JavaScript and Camel Case</h2>
+    <p>Historically, programmers have used different ways of joining multiple words into one variable name:</p>
+    <p>Hyphens: first-name, last-name, master-card, inter-city.</p>
+    <p>Hyphens are not allowed in JavaScript. They are reserved for subtractions.</p>
+    <p>Underscore: first_name, last_name, master_card, inter_city.</p>
+    <p>Upper Camel Case (Pascal Case): FirstName, LastName, MasterCard, InterCity.</p>
+    <p>Lower Camel Case: JavaScript programmers tend to use camel case that starts with a lowercase letter: firstName, lastName, masterCard, interCity.</p>
+   
+
+
+
+
+
+
+    <!-- **************************************
+    ********** JavaScript Variables ***********
+    ******************************************* -->
+
+    <h1 id="js-variables">JavaScript Variables</h1>
+    
+    <h2>4 Ways to Declare a JavaScript Variable:</h2>
+    <p>
+    + Using var     | <span>Example: var x = 11; var y = 22; var z = x + y;</span> <br>
+    + Using let     | <span>Example: let x = 11; let y = 22; let z = x + y;</span> <br>
+    + Using const   | I don't have example<br>
+    + Using nothing | <span>Example x = 11; y = 22; z = x + y;</span>
+    </p>
+   
+
+    <h2>When to Use JavaScript var?</h2>
+    <p>Always declare JavaScript variables with var,let, orconst.</p>
+    <p>The var keyword is used in all JavaScript code from 1995 to 2015.</p>
+    <p>The let and const keywords were added to JavaScript in 2015.</p>
+    <p>If you want your code to run in older browser, you must use var.</p>
+   
+
+    <h2>When to Use JavaScript const?</h2>
+    <P>If you want a general rule, always declare variables with const.</P>
+    <P>If you think the value of the variable can change, use constlet.</P>
+    <P>In this example, price1, price2, and total, are variables</P>
+
+    <h2>Example:</h2>
+    <span>
+        const price1 = 11; <br>
+        const price2 = 22; <br>
+        let total = price1 + price2;
+    </span>
+    
+    <p>The prices are declared with the const keyword.</p>
+    <p>These prices are constant values, and cannot be changed.</p>
+    <p>Still, price1 and price2 are called variables</p>
+   
+
+    <h2>JavaScript Identifiers</h2>
+    <p>All JavaScript variables must be identified with unique names.</p>
+    <p>These unique names are called identifiers.</p>
+    <p>Identifiers can be short names (like x and y) or more descriptive names (age, sum, totalVolume).</p>
+
+    <h2>The general rules for constructing names for variables (unique identifiers) are:</h2>
+    <p>+ Names can contain letters, digits, underscores, and dollar signs.</p>
+    <p>+ Names must begin with a letter</p>
+    <p>+ Names can also begin with $ and _ (but we will not use it in this tutorial)</p>
+    <p>+ Names are case sensitive (y and Y are different variables)</p>
+    <p>+ Reserved words (like JavaScript keywords) cannot be used as names</p>
+
+    <h2>The Assignment Operator</h2>
+    <p>In JavaScript, the equal sign (=) is an "assignment" operator, not an "equal to" operator.</p>
+    <p>This is different from algebra. The following does not make sense in algebra: <span>x = x + 11;</span></p>
+    <p>In JavaScript, however, it makes perfect sense: it assigns the value of x + 5 to x.</p>
+    <p>(It calculates the value of x + 5 and puts the result into x. The value of x is incremented by 5.)</p>
+   
+
+    <h2>JavaScript Data Types</h2>
+    <p>JavaScript variables can hold numbers like 100 and text values like "John Doe".</p>
+    <p>In programming, text values are called text strings.</p>
+    <p>JavaScript can handle many types of data, but for now, just think of numbers and strings.</p>
+    <p>Strings are written inside double or single quotes. Numbers are written without quotes.</p>
+    <p>If you put a number in quotes, it will be treated as a text string.</p>
+   
+    <h2>Example</h2>
+    <span>
+        const pi = 3.14; <br>
+        let person = "Huy"; <br>
+        let anwser = "Yes, i am";
+    </span>
+    
+
+
+
+
+
+
+    <!-- ********************************
+    ********** JavaScript Let ***********
+    ************************************* -->
+
+    <h1 id="js-let">JavaScript Let</h1>
+    <p>The <span>Let</span> was introduced in ES6 (2015)</p>
+    <p>Variables defined with <span>Let</span> cannot be redeclared.</p>
+    <p>Variables defined with <span>Let</span> must be declared before used.</p>
+    <p>Variables defined with <span>Let</span> have block scope.</p>
+
+    <h2>Cannot be redeclared</h2>
+    <p>With <span>Let</span> you cannot do this</p>
+    <span>
+        let x = "Huy Gia"; <br>
+        let x = 0; <br>
+        // Syntax Error: "x" has already been declared
+    </span>
+
+    <p>With <span>Var</span> you can</p>
+    <span>
+        var x = "Huy Gia"; <br>
+        var x = 0;
+    </span>
+
+    <h2>Block Scope</h2>
+    <p>Before ES6 (2015), JavaScript had only Global Scope and Function Scope.</p>
+    <p>ES6 introduced two important new JavaScript keywords: let and const.</p>
+    <p>These two keywords provide Block Scope in JavaScript.</p>
+    <p>Variables declared inside a { } block cannot be accessed from outside the block:</p>
+
+    <h2>Example</h2>
+    <span>
+        { let x = 2; }
+    </span>
+
+    <p>Variables declared with the <span>Var</span> keyword can NOT have a block scope</p>
+    <p>Variables declared inside a { } block can be accessed from outside block</p>
+
+    <h2>Example</h2>
+    <span>
+        { var x = 2 }; <br>
+        // x Can be used here
+    </span>
+
+    <h2>Redeclaring Variables</h2>
+    <p>Redeclaring a variable using the <span>Var</span> keyword can impose problemss</p>
+    <p>Redeclaring a variable inside a block will also redeclare the variables outside the block:</p>
+    <span>
+        var x = 10; <br>
+        // Here x is 10 <br>
+        { var x = 2 // Here x is 2}  <br>
+        //Here x is 2
+    </span>
+
+    <p>Redeclaring a variable using <span>Let</span> keyword can solve this problem.</p>
+    <p>Redeclaring a variable inside a block will not redeclare the variable outside the block:</p>
+
+    <span>
+        let x = 11; <br>
+        //Here <span>x</span> is 11 <br>
+        { let x = 22 //Here <span>x</span> is 22 } <br>
+        // Here <span>x</span> is 11
+    </span>
+
+    <h2>Redeclraing</h2>
+    <p>Redeclaring a JavaScript variables with <span>var</span> is allowed anywhere in a program:</p>
+    <h2>Example</h2>
+    <span>
+        var x = 11; <br>
+        // Now x is 11 <br>
+        var x = 22; <br>
+        // Now x is 22
+    </span>
+    <p>With <span>let</span>, redeclaring a variable in the same block is not allowed:</p>
+    <h2>Example</h2>
+    <span>
+        var x = 11; //allowed <br>
+        let x = 22; //not allowed <br>
+        <br>
+        { let x = 11; //allowed <br>
+        let x = 22; //not allowed } <br>
+    </span>
+    <p>Redeclaring a variable with <span>Let</span>, in another block, is allowed:</p>
+    <span>
+        let x = 11; //allowed <br>
+        { let x = 11 } //allowed <br>
+        { let x = 22 } //allowed
+    </span>
+
+    <h2>Let Hoisting</h2>
+    <p>Variabless defines with <span>var</span> are hoisted to the top and initialized at any time.</p>
+    <p>Meaning: You can use the variable before it is declared:</p>
+    <h2>Example</h2>
+    <span>
+        carName = "Huy Gia"; <br>
+        var carName; <br>
+        document.getElementById("carName").innerHTML = carName;
+    </span>
+
+
+
+
+
+
+
+    <!-- **********************************
+    ********** JavaScript Const ***********
+    *************************************** -->
+    <h1 id="js-const">JavaScript Const</h1>
+    <script type="text/javascript">
+        
+    </script>
+
+
+
+</div> <!-- end container -->
+    
+
+
+
+
+<!-- js link -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src=""></script>
+
+</body>
+</html>

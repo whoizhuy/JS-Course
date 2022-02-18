@@ -1,0 +1,51 @@
+<!-- 
+    Truthy - to bool is true
+
+    Bất cứ giá trị nào trong Javascript khi chuyển đổi sang kiểu dữ liệu boolean mà có giá trị true thì ta gọi giá trị đó là Truthy.
+
+    Các giá trị 1, ['BMW'], { name: 'Miu' } và 'hi' được đề cập trong ví dụ dưới đây là Truthy vì khi chuyển sang Boolean ta nhận được giá trị true.
+-->
+<script>
+    console.log(Boolean(1))
+    console.log(Boolean(['BMW']))
+    console.log(Boolean({ name: 'aknhg'}))
+
+    console.log(!('hi')) // phủ định của phủ định
+</script>
+
+<!--  
+    Falsy - to bool is false
+
+    Bất cứ giá trị nào trong Javascript khi chuyển đổi sang kiểu dữ liệu boolean mà có giá trị false thì ta gọi giá trị đó là Falsy.
+
+    Trong Javascript có 6 giá trị sau được coi là Falsy:
+        1. false
+        2. 0 (số không)
+        3. '' or "" (chuỗi rỗng)
+        4. null
+        5. undefined
+        6. NaN
+-->
+<script>
+    console.log(false)
+    console.log(0)
+    console.log('' || "")
+    console.log(null)
+    console.log(undefined)
+    console.log(NaN)
+</script>
+<!--
+    Ngoài 6 giá trị đã đề cập tới ở phần Falsy thì toàn bộ các giá trị khác đều là Truthy, kể cả những giá trị sau:
+
+        1. '0' (một chuỗi chứa số 0)
+        2. ' ' (một chuỗi chứa dấu cách)
+        3. 'false' (một chuỗi chứa từ khoá false)
+        4. [] (một array trống)
+        5. {} (một object trống)
+        6. function() {} (một hàm trống)
+-->
+<script>
+    console.log(Boolean({}))
+    console.log(Boolean([]))
+    console.log(Boolean(function () {}) )
+</script>

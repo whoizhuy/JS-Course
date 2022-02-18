@@ -1,0 +1,16 @@
+* {
+    font-family: monospace;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+button {
+    background: dodgerblue;
+    color: white;
+    border: none;
+}
+input {
+    color: black;
+}

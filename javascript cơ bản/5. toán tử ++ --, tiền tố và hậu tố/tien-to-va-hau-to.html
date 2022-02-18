@@ -1,0 +1,49 @@
+<!-- 
+    Toán tử
+        + Prefix: tiền tố
+        + Posfix: hậu tố
+ -->
+<script>
+    var a = 11;
+    // việc 1: +1 cho a, a = a + 1 => a = 12
+    // việc 2: trả về a sau khi được +1
+    var outputA = ++a;
+    console.log('outputA: ', outputA);
+
+    // việc 1: 'b copy', 'b copy' = 22
+    // việc 2: +1 cho b, b = b + 1 = 23
+    // việc 3: trả về 'b copy'
+    var b = 22;
+    var outputB = b++;
+    console.log('outputB: ', outputB);
+    console.log('b là: ', b);
+    // có mẹo dễ nhớ là nếu ++a thì do dấu ++ nó đứng trước a nên nó lấy luôn kết quả  tăng 1 còn a++ do a đứng trước dấu ++ nên khi gán nó sẽ lấy giá trị a trước khi tăng 1
+    // hiểu đơn giản: i++ -> trả về i rồi mới +1 ở câu lệnh sau. ++i tăng 1 ngay lập tức
+
+    var number = 22;
+    var outputNumber = number++ + --number;
+    console.log('outputNumber là: ', outputNumber);
+    /*
+    Lúc này number++ được xủ lí trước thành 22 + 1 = 23, vì là hậu tố nên number sẽ giữ bản copy là 22
+    Giờ number sau khi được xử lí là 23, sau khi --number thì là 22
+    => outputNumber = 22 + (23 - 1) = 44
+    */
+    
+
+    var ouputNumber2 = number++ * 2 + --number * 2;
+    console.log('outputNumber2 là: ', ouputNumber2);
+    /*
+    Tương tự number++ = 22 * 2 = 44
+             --number = (23 - 1) * 2 = 44
+    => kết quả: 44 + 44 = 88
+    */
+
+
+    var outputNumber3 = ++number * 2 + number-- * 2;
+    console.log('outputNumber3 là: ', outputNumber3);
+    /*
+    Tương tự ++number = 23 * 2 = 46
+             --number = 23 * 2 = 46
+    => kết quả: 46 + 46 = 92
+    */ 
+</script>

@@ -1,0 +1,58 @@
+<!--  
+    THAM SỐ HÀM - JAVASCRIPT CƠ BẢN
+
+    1. Tham số:
+        - Định nghĩa
+        - Kiểu dữ liệu
+        - Tính private
+        - 1 tham số
+        - Nhiều tham số
+    
+    2. Truyền tham số
+        - 1 tham số
+        - Nhiều tham số
+
+    3. Argument
+        - Đối tượng arguments
+        - Giới thiệu vòng for
+-->
+<script>
+    function writeLog(message) {
+        console.log(message);
+    };
+    writeLog(123);
+    writeLog('Hello world');
+    writeLog(['HTML', 'CSS', 'JS']);
+
+    // truyền nhiều tham số
+    function log(log1, log2) {
+        console.log(log1);
+        console.log(log2);
+    }
+    log('log 1', 'log 2')
+    log();
+    log('log 1');
+
+    // Arguments
+    function argu() {
+        console.log(arguments);
+    }
+    argu('HTML', 'CSS', 'JS')
+
+    // Vòng For
+    function for_argu() {
+        for (var param of arguments) {
+            console.log(param)
+        }
+    }
+    for_argu('HTML', 'CSS', 'JS');
+
+    function string_argu() {
+        var myString = '';
+        for (var forString of arguments) {
+            myString += `${forString}, `
+        }
+        console.log(myString);
+    }
+    string_argu('HTML', 'CSS', 'JS', 'BOOTSTRAP', 'REACT')
+</script>
