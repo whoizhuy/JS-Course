@@ -10,9 +10,21 @@
     // Cách thêm object
     myInfo.email = 'huy45209@donga.edu.vn';
     myInfo['my-email'] = 'giahuy1159@gmail.com'
+    
+    // thêm bằng 1 biến
+    var linkKey = 'link'
+    myInfo[linkKey] = 'https://facebook.com'
 
     console.log(myInfo);
 
     // lấy key value
     console.log(myInfo.name)
+
+    var myKey = 'address'
+    console.log(myInfo[myKey])
+    console.log(myInfo['age'])
+
+    // xoá key value
+    delete myInfo.email;
+    delete myInfo[linkKey];
 </script>

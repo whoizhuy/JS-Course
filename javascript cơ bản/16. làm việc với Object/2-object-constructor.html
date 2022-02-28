@@ -1,0 +1,20 @@
+<!--  
+    OBJECT CONSTRUCTOR
+-->
+<script>
+    function User(firstName, lastName, avatar) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.avatar = avatar;
+    }
+    var author = new User('Huy', 'Gia', 'Image');
+    var user = new User('Bro', 'Last', 'Image');
+
+    console.log(author, user)
+
+    // kiểm tra cấu trúc của nó
+    console.log(author.constructor)
+
+    // so sánh cấu trúc có giống không
+    console.log(author.constructor === User)
+</script>
