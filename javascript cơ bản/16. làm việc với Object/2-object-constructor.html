@@ -1,12 +1,29 @@
 <!--  
     OBJECT CONSTRUCTOR
+
+    Lập trình OOP
 -->
 <script>
+    // tạo bảng thiết kế
     function User(firstName, lastName, avatar) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.avatar = avatar;
+
+        this.getName = function() {
+            return `${this.firstName} ${this.lastName}`
+        }
     }
+
+    // Hoặc
+    var House = function(address, city, district, country) {
+        this.address = address;
+        this.city = city;
+        this.district = district;
+        this.country = country;
+    }
+
+    // tạo đối tượng
     var author = new User('Huy', 'Gia', 'Image');
     var user = new User('Bro', 'Last', 'Image');
 
@@ -15,6 +32,14 @@
     // kiểm tra cấu trúc của nó
     console.log(author.constructor)
 
-    // so sánh cấu trúc có giống không
+    // kiểm tra so sánh cấu trúc có giống không
     console.log(author.constructor === User)
+
+    // thêm value cho object
+    author.title = 'chia sẻ dạo tại F8';
+    user.comment = 'liệu có khoá asp.net ko ad 🥺'
+
+    // lấy this value của object nào sẽ trả object đó
+    console.log(author.getName());
+    console.log(user.getName())
 </script>
