@@ -1,11 +1,16 @@
 <!--  
-    OBJECT PROTOTYPE -BASIC
+    OBJECT PROTOTYPE - BASIC
 
     1. Prototype là gì
     2. Sử dụng khi nào
+
+    Hiểu đơn giản như sau:
+    Đối tượng: tạo {key: value} mới. dùng user.className = 'F8'. Với class constructor User: tạo mới, dùng User.prototype.className = 'F8'
+    => các đối tượng được tạo từ constructor sẽ kế thừa [key: value] mới này
 -->
 
 <script>
+    // tạo bảng thiết kế
     function User(firstName, lastName, avatar) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -15,9 +20,16 @@
             return `${this.firstName} ${this.lastName}`
         }
     }
-    // thêm thuộc tính
+    // thêm khuôn vào bản thiết kế
     User.className = 'HG' // cách sai
     User.prototype.className = 'HG' // cách đúng
+    User.prototype.getClassName = function () {
+        return this.className;
+    }
     
-    var author = new User('Huy', 'Huynh', 'Null')
+    
+    var authorOne = new User()
+    var authorTwo = new User('KA', 'DP', 'Null', 'HG')
+    console.log(authorOne)
+    console.log(authorTwo)
 </script>

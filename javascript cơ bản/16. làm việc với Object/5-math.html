@@ -1,0 +1,47 @@
+<!--  
+    MATH OBJECT - built in function
+    - Math.pi
+    - Math.round()
+    - Math.abs()
+    - Math.ceil()
+    - Math.floor()
+    - Math.random()
+    - Math.min()
+-->
+<script>
+    console.log('pi: ', Math.PI)
+
+    const pi = Math.PI
+    console.log(pi.toFixed(2))
+
+    // làm tròn số
+    console.log(Math.round(123.3498))
+
+    // trị tuyệt đối
+    console.log(Math.abs(-4))
+
+    // làm tròn trên
+    console.log(Math.ceil(4.1)) // 5
+
+    // làm tròn dưới
+    console.log(Math.floor(4.9)) // 4
+
+    // lấy ngẫu nhiên
+    console.log(Math.floor(Math.random() * 100)) // random đến 100
+
+    var notRandom = Math.floor(Math.random() * 5)
+    var bonus = [
+        '10 coin', '20 coin', '30 coin', '40 coin', '50 coin'
+    ]
+    console.log(bonus[notRandom])
+
+    var random = Math.floor(Math.random() * 101)
+    if (random <= 5) {
+        console.log('cường hoá thành công')
+    }
+
+    // nhỏ nhất - lớn nhất
+    console.log(Math.min(100, 2, -5, 0, -203))
+    console.log(Math.max(2211, 25, 255, 9433, 135))
+    console.log(Math.min(Math.floor(Math.random() * 2000)))
+</script>
