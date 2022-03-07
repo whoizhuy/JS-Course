@@ -1,0 +1,38 @@
+<!--  
+    CÂU LỆNH RẼ NHÁNH - SWITCH
+
+    Khi nào sử dụng SWITCH - IF ELSE
+    - IF ELSE: so sánh đúng sai, các toán tử > < != == ===, 2 trường hợp ss
+    - SWITCH CASE: khi có 3 trường hợp trở lên nhìn đở rối code hơn 
+-->
+<script>
+    var date = 3
+
+    switch (date) {
+        case 2: // sử dụng toán tử === để so sánh
+            console.log('hôm nay là thứ 2')
+            // break;
+        case 3:
+            console.log('hôm nay là thứ 3')
+            // break;
+        case 4:
+            console.log('hôm nay là thứ 4')
+            // break;
+        case 5:
+            console.log('hôm nay là thứ 5')
+            break; // nếu ko có break, 1 cái đúng là load hết tới break
+    }
+
+    switch(date) {
+        case 2:
+        case 3:
+        case 4:
+            console.log('hôm nay là thứ 2, 3, 4')
+            break; // cho những trường hợp có kết quả giống nhau
+        case 5:
+            console.log('hôm nay là thứ 5')
+            // break; // ko có break thì load tới default luôn
+        default:
+            console.log('Không biết')
+    }
+</script>

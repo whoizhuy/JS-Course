@@ -1,0 +1,146 @@
+:root {
+    --green: #4daf54;
+    --dark-green: #3d8888;
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: .5s;
+}
+body {
+    height: 100vh;
+    background: linear-gradient(to right, var(--green), var(--dark-green));
+}
+
+.card {
+    margin: 120px auto;
+    width: 320px;
+    height: 400px;
+    background: #272d40;
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    position: relative;
+}
+
+.card__heart, .card__cart {
+    font-size: 25px;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.card__cart {
+    left: unset;
+    right: 20px;
+}
+
+.card__img {
+    margin-top: 2.2rem;
+    margin-left: 5px;
+    width: 90%;
+    height: 50%;
+}
+
+.card__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card__title, .card__price {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card__title {
+    color: rgb(89, 250, 57);
+}
+
+.card__size, .card__color {
+    display: flex;
+    align-items: center;
+    margin: .5rem 0;
+}
+
+.card__size h3,
+.card__color h3 {
+    margin-right: 1.2rem;
+}
+
+.card__size span {
+    padding: 1px 8px;
+    background: #dadada;
+    color: #333;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+.card__color span {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.card__color--green {
+    background: var(--green);
+}
+.card__color--red {
+    background: red;
+}
+.card__color--black {
+    background: black;
+}
+
+.card__action {
+    display: flex;
+    justify-content: space-between;
+}
+.card__action button {
+    background: var(--green);
+    border: none;
+    outline: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.card:hover .card__img {
+    transform: translateY(-90px) rotate(-20deg);
+}
+.card:hover .card__title {
+    transform: translate(-42px, -70px);
+}
+.card:hover .card__price {
+    transform: translate(-120px, -70px);
+}
+
+.card__size {
+    margin-top: 150px;
+}
+.card__size,
+.card__color,
+.card__action {
+    visibility: hidden;
+    opacity: 0;
+}
+.card:hover .card__size, 
+.card:hover .card__color, 
+.card:hover .card__action {
+    visibility: visible;
+    opacity: 1;
+}
+.card:hover .card__size {
+    margin-top: -30px;
+}
