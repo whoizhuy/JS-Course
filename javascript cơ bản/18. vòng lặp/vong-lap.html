@@ -1,0 +1,176 @@
+<!--  
+	VÒNG LẶP - LOOP
+
+	1. for - Lặp với điều kiện đúng
+	2. for/in - lặp qua key của đối tượng
+	3. for/of - lặp qua value của đối tượng
+	4. while - lặp khi điều kiện đúng
+	5. do/while - lặp ít nhất 1 lần, và sau đó lặp khi điều kiện đúng
+-->
+<script>
+	// For loop part 1
+	for (var i = 1; i <= 10; i++) {
+		console.log()
+	}
+
+	// For loop part 2
+	var i = 1
+	for (; i < 11;) {
+		i++;
+		console.log()
+	}
+
+	// For loop part 3
+	var myArray = [
+		'JS', 'HTML', 'CSS',
+		'Flutter', 'Golang', 'C++', 'C#'
+	]
+	var arrayLength = myArray.length;
+	for (var i = 0; i < arrayLength; i++) {
+		console.log(myArray[i])
+	}
+
+
+	// For-in loop
+	var myInfo = {
+		name: 'HG',
+		age: 22,
+		address: 'QN'
+	}
+	for (var key in myInfo) {
+		console.log(myInfo[key])
+	}
+
+	var languages = [
+		'JS', 'HTML', 'CSS',
+		'Flutter', 'Golang', 'C++', 'C#'
+	]
+	for (var key in languages) {
+		console.log(languages[key])
+	}
+
+	var language = 'Javascript'
+	for (var key in language) {
+		console.log(language[key])
+	}
+
+
+	// For-of loop
+	var addresses = [
+		'144 NBL',
+		'208 QT',
+		'805/21/1 THĐ'
+	]
+	for (var value of addresses) {
+		console.log(value)
+	}
+
+	var house = {
+		name: 'yellow duck house',
+		color: 'yellow and blue',
+		address: null
+	}
+	for (var value of Object.keys(house)) {
+		console.log(value)
+		console.log(house[value])
+	}
+	console.log(Object.values(house))
+	for (var value of Object.values(house)) {
+		console.log(value)
+	}
+
+
+	// While loop
+	var a = 0
+	while (a < 4) {
+		a++
+		console.log(a)
+	}
+
+	var i = 0
+	var fruits = ['banana', 'apple', 'durian']
+	while (i < fruits.length) {
+		console.log(fruits[i])
+		i++
+	}
+
+	// Do-While loop
+	var i = 0;
+	do {
+		i++
+		console.log(i)
+	} while (i < 5);
+
+	// ứng dụng nạp thẻ
+	var b = 0
+	var isSuccess = false
+	do {
+		b++
+		console.log('Nạp thẻ lần ' + b)
+		// thành công
+		if(false) {
+			isSuccess = true
+		}
+	} while (!isSuccess && b <= 3);
+
+
+	// break & continue
+	for (var e = 0; e < 5; e++) {
+		console.log('e break: ' +e)
+
+		if (e >= 5) {
+			break
+		}
+	}
+
+	for (var f = 0; f < 10 ;f++) {
+		if (f % 2 == 0) {
+			continue
+		}
+		console.log('f: ' +f)
+	}
+
+	// Nest loop
+	var theArray = [
+		[1, 2],
+		[3, 4],
+		[5, 6]
+	]
+	for (var g = 0; g < theArray.length; g++) {
+		for (var h = 0; h < theArray[g].length; h++) {
+			console.log('theArray: ' +theArray[g][h])
+		}
+	}
+
+
+	// LUYỆN TẬP
+	for (var c = 0; c <= 2; c++) {
+		console.log('đây là c: ' + c)
+	}
+
+	var Company = {
+		name: 'AKHG',
+		type: 'TNHH 0TV',
+		specialize: 'Bread & Handmade'
+	}
+	for (keys in Object.values(Company)) {
+		console.log('Company gồm các keys: ' +keys)
+	}
+	for (values of Object.values(Company)) {
+		console.log('Các values của Company: ' +values)
+	}
+
+	var d = 0
+	while (d < 3) {
+		d++
+		console.log(d)
+	}
+
+	var e = 0
+	var subjectList = ['Math', 'Literature', 'Physic']
+	while (e < subjectList.length) {
+		e++;
+		console.log(subjectList[e])
+	}
+
+</script>
