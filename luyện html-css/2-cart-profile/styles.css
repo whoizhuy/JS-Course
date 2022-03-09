@@ -16,15 +16,17 @@ body {
     display: flex;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
+    padding: 0 10%;
 }
 
 .card {
     width: 300px;
     height: 400px;
-    background: #242628;
-    margin: 8rem auto;
+    background: #2c2e28;
+    margin: auto auto;
     border-radius: 15px;
     text-align: center;
+    overflow: hidden;
 }
 
 img {
@@ -39,16 +41,57 @@ img {
     border-radius: 50%;
     border: 4px solid var(--pink);
     overflow: hidden;
-    margin: 25px auto 10px auto;
+    margin: 0 auto;
+    transform: translateY(25px);
+    transition: linear .2s;
+}
+.card_img:hover {
+    width: 100%;
+    height: 100%;
+    border-radius: unset;
+    border: none;
+    transform: unset;
 }
 
+.card h2 {
+    margin-top: 45px;
+}
 .card p {
     color: var(--pink);
+    letter-spacing: 2px;
 }
-
 .card .social {
-    display: flex;
+    margin: 2rem;
 }
 .card .social a {
-    
+    text-decoration: none;
+    margin: 15px;
+}
+.card .social a i {
+    font-size: 24px;
+    color: rgb(255, 176, 176);
+    list-style: none;
+    transition: linear .2s;
+}
+.card .social a i:hover {
+    color: #ff6156;
+    transform: scale(1.2);
+}
+
+button {
+    padding: .6rem 1.2rem;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid var(--pink);
+    font-size: 14px;
+    font-weight: bold;
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+.card .btn {
+    transition: .2s;
+}
+.card .btn:hover {
+    background: var(--pink);
 }
