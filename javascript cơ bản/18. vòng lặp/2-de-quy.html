@@ -1,0 +1,62 @@
+<!--  
+    ĐỆ QUY
+    
+    Lưu ý: không phải lúc nào cũng dùng để quy ==> gây ra tràn bộ nhớ
+        1. Xác định điểm dừng
+        2. Logic Handle, tạo ra điểm dừng
+-->
+<script>
+    var array = [1, 2 ,3 ,4 ,2 ,3, 1 ,5 , 2, 1, 4]
+    console.log([...(new Set(array))])
+    // đặc tính của set là lấy các phần tử ko trùng lặp
+
+    function deQuy() {
+        num = 3
+        if (num < 5) {
+            // dừng
+            // ...
+            return 2
+        }
+        deQuy()
+    }
+    
+
+    // ví dụ countdown
+    function countdown(number) {
+        if (number > 0) {
+            console.log(number)
+            return countdown(number - 1)
+        }
+        return number
+    }
+    countdown(3)
+
+
+
+    // ví dụ vòng lặp
+    function loop(start, end, callback) {
+        if (start < end) {
+            callback(start)
+            return loop(start + 1, end, callback)
+        }
+    }
+
+
+    var newArray = ['js', 'html', 'css']
+    // loop(điểm bắt đầu, điểm dừng, tham số)
+    loop(0, newArray.length, function(index) {
+        console.log(newArray[index]);
+    })
+
+
+
+    // tính gia thừa
+    function giaiThua (number) {
+        var output = 1
+        for (var i = number; i > 0; i--) {
+            output = output * i
+        }
+        return output
+    }
+    console.log(giaiThua(5))
+</script>
