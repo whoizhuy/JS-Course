@@ -10,41 +10,198 @@
 -->
 <script>
 	var course = [
-		{
-			id: 1,
-			name: 'js',
-			coin: 250
-		},
-
-		{
-			id: 2,
-			name: 'html/css',
-			coin: 0
-		},
-
-		{
-			id: 3,
-			name: 'ruby',
-			coin: 250
-		},
-
-		{
-			id: 4,
-			name: 'php',
-			coin: 400
-		},
-
-		{
-			id: 5,
-			name: 'reactJS',
-			coin: 500
-		}
+		{id: 1, name: 'js', coin: 250},
+		{id: 2, name: 'html/css', coin: 0},
+		{id: 3, name: 'ruby', coin: 250},
+		{id: 4, name: 'php', coin: 400},
+		{id: 5, name: 'reactJS', coin: 500},
+		{id: 6, name: 'ruby advance', coin: 250}
 	]
 
-	// forEach - Duyệt qua các phần tử của mảng
+	// forEach - Duyệt qua từng phần tử của mảng
 	course.forEach(function(course, index) {
-		console.log(index, course)
+		console.log(index + 1, course)
 	})
 
 	// Every - Tương tự forEach và phải thoả điều kiện gì đó
+	// chỉ cần một điều kiện sai thì quá trình kiểm tra dừng lại và trả về false
+	var isFree = course.every(function(course, index) {
+		return course.coin == 0
+	})
+	console.log(isFree)
+
+	// some - ngược lại với every
+	// chỉ cần một điều kiện đúng thì dừng quá trình kiểm tra và trả về true
+	var isExpensive = course.some(function(course, index) {
+		return course.coin === 0
+	})
+	console.log(isExpensive)
+
+	// find - tìm mà có thì nó trả về chỉ 1 phần tử thoả điều kiện, không thì là undefine
+	var isHere = course.find(function(course, index){
+		return course.name == 'ruby'
+	})
+	console.log(isHere)
+
+	// filter - tìm mà có thì nó trả về chỉ tất cả phần tử thoả điều kiện, không thì là undefine
+	var isHere = course.filter(function(course, index){
+		return course.name == 'ruby'
+	})
+	console.log(isHere)
+	
+
+
+
+
+
+
+	// map() - dùng map() khi muốn thay đổi element trong array
+	function courseHandler(course) {
+		return {
+			id: course.id,
+			name: `khoá học: ${course.name}`,
+			coin: course.coin,
+			coinText: `Giá: ${course.coin}`
+		}
+	}
+	var newCourse = course.map(courseHandler)
+
+	var newCourse = course.map(function Handler(course, originArray) {
+		return {
+			id: course.id,
+			name: `khoá học: ${course.name}`,
+			coin: course.coin,
+			coinText: `giá: ${course.coin}`,
+			// index: index,
+			original: originArray // or original: course
+		}
+	})
+	console.log(newCourse)
+
+	var newCourse = course.map(function(course) {
+		return course.name
+	})
+	console.log(newCourse)
+
+	var newCourse = course.map(function(course) {
+		return `<h1>Hello ${course.name}</h1>`
+	})
+	console.log(newCourse) // console.log(newCourse.join(''))
+
+
+
+
+
+
+	// reduce() - khi bạn muốn nhận về một giá trị duy nhất sau khi tính toán các phần tử trong một array
+	// ví dụ nhận về tổng số coin trong array
+
+	// nếu ko sử dụng reduce thì có thể dùng vòng lặp
+	var totalCoin = 0
+	for (var money of course) {
+		totalCoin += money.coin
+	}
+	console.log(totalCoin)
+
+	// sử dụng reduce()
+	// nhìn chi tiết
+	var i = 0
+	function coinHandler(accumulator, currentValue, currentIndex, originArray) {
+		i++
+		var total = accumulator + currentValue.coin
+		console.table({
+			'Lượt chạy: ': i,
+			'Biến lưu trữ: ': accumulator,
+			'Giá khoá học:': currentValue.coin,
+			'Tích trữ được: ': total
+		})
+		return total
+	}
+	var totalCoin = course.reduce(coinHandler, 0)
+
+	// rút gọn
+	var totalCoin = course.reduce(function coinHandler(accumulator, currentValue) {
+		return accumulator + currentValue.coin
+	}, 0)
+
+
+
+
+
+	// reduce() phần 2
+	// đặt lại tên cho gần gũi dễ hình dung
+	var totalCoin = course.reduce(function(total, course) {
+		return total + course.coin
+	}, 0) // giá trị (số tiền) ban đầu, giá trị ko bắt buộc, có cũng được ko có cũng ko sao nao NHƯNG nó sẽ quyết định kết quả thuộc loại giá trị gì (số, string, object, bla bla...)
+	console.log(totalCoin)
+
+	var numbers = [100, 753, 790, 74, 25]
+	var totalNumbers = numbers.reduce(function(totalNumber, number){
+		return totalNumber + number
+	})//, 0)
+	console.log(totalNumbers)
+
+	// bài tập
+	// Flat - "làm phẳng" mảng từ Depth Array - "Mảng sâu"
+	var depthArray = [1, 2, [3,4], 5, 6, [7, 8, 9]]
+
+	var flatArray = depthArray.reduce(function(flatOutput, depthItem){
+		return flatOutput.concat(depthItem)
+	}, [])
+	console.log(flatArray)
+
+	for (var i = 0; i < depthArray.length; i++) {
+		// console.log(depthArray[i])
+	}
+
+
+
+	// lấy các khoá học đưa vào một mảng mới
+	var topics = [
+		{	topic: 'front-end',
+			course: [
+				{
+					id: 1,
+					title: 'html-css'
+				},
+				{
+					id: 2,
+					title: 'javascript'
+				}
+			]
+		},
+
+		{	topic: 'back-end',
+			course: [
+				{	id: 1,
+					title: 'php'	},
+				{	id: 2,
+					title: 'nodejs' 	}
+			]
+		}
+	]
+	var flatCourses = topics.reduce(function(course, topic) {
+		return course.concat(topic.course)
+	}, [])
+	console.log(flatCourses)
+
+	var html = flatCourses.map(function(course) {
+		return `
+			<div>
+				<h2>${course.title}</h2>	
+				<p>${course.id}</p>	
+			</div>
+		`
+	})
+	console.log(html.join(''))
+
+
+
+
+	// Phương thức reduce có logic như thế nào
+	var numbers = [1, 2, 3, 4, 5]
+	console.log(numbers.reduce(function (total, number) {
+			return total + number
+	}))
+	
 </script>

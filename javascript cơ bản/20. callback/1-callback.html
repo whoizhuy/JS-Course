@@ -1,0 +1,16 @@
+<!-- 
+    CALLBACK
+-->
+<script>
+    console.log('hello world')
+    function myFunction(param) {
+        if (typeof param === 'function') {
+            param('học lập trình js')
+        }
+    }
+
+    function myCallback(value) {
+        console.log('value:', value)
+    }
+    myFunction(myCallback)
+</script>
